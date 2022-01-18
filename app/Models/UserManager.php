@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\Models\Task;
+namespace app\Models;
 
 
 use core\Connection\MysqlConnection;

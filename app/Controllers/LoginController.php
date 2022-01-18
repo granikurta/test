@@ -4,7 +4,7 @@
 namespace app\Controllers;
 
 
-use app\Models\Task\UserManager;
+use app\Models\UserManager;
 use app\View;
 
 class LoginController

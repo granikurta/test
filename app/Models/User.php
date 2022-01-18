@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\Models\Task;
+namespace app\Models;
 
 
 class User

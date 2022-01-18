@@ -5,7 +5,7 @@ namespace Mapper;
 
 
 use app\Models\Task\Task;
-use app\Models\Task\User;
+use app\Models\User;
 
 class TaskMapper extends Mapper
 {

@@ -4,7 +4,7 @@
 namespace Mapper;
 
 
-use app\Models\Task\User;
+use app\Models\User;
 
 class UserMapper
 {
@@ -14,7 +14,6 @@ class UserMapper
      */
     public function buildUserEntity(array $property): User
     {
-
         return new User($property['Id'], $property['Name'], $property['Email'], $property['Password']);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace app\Models\Task;
 
+use app\Models\User;
+
 class Task
 {
 

@@ -6,14 +6,14 @@ session_start();
     <div class="row mt-4 ">
         <div class="col-xs-12">
             <div class="form-group">
-                <a class="btn btn-primary bi bi-arrow-<?php echo ($orderDirect == 'DESC' && $orderColumn == 'User.Name') ? 'up' : 'down'; ?>"
-                   href="?column=User.Name&order=<?php echo ($orderDirect == 'DESC' && $orderColumn == 'User.Name') ? 'ASC' : 'DESC'; ?>"
+                <a class="btn btn-primary bi bi-arrow-<?php echo ($orderDirect == 'DESC' && $orderColumn == 'u.Name') ? 'up' : 'down'; ?>"
+                   href="?column=u.Name&order=<?php echo ($orderDirect == 'DESC' && $orderColumn == 'u.Name') ? 'ASC' : 'DESC'; ?>"
                    role="button">Name</a>
-                <a class="btn btn-primary bi bi-arrow-<?php echo ($orderDirect == 'DESC' && $orderColumn == 'User.Email') ? 'up' : 'down'; ?>"
-                   href="?column=User.Email&order=<?php echo ($orderDirect == 'DESC' && $orderColumn == 'User.Email') ? 'ASC' : 'DESC'; ?>"
+                <a class="btn btn-primary bi bi-arrow-<?php echo ($orderDirect == 'DESC' && $orderColumn == 'u.Email') ? 'up' : 'down'; ?>"
+                   href="?column=u.Email&order=<?php echo ($orderDirect == 'DESC' && $orderColumn == 'u.Email') ? 'ASC' : 'DESC'; ?>"
                    role="button">Email</a>
-                <a class="btn btn-primary bi bi-arrow-<?php echo ($orderDirect == 'DESC' && $orderColumn == 'Task.Status') ? 'up' : 'down'; ?>"
-                   href="?column=Task.Status&order=<?php echo ($orderDirect == 'DESC' && $orderColumn == 'Task.Status') ? 'ASC' : 'DESC'; ?>"
+                <a class="btn btn-primary bi bi-arrow-<?php echo ($orderDirect == 'DESC' && $orderColumn == 't.Status') ? 'up' : 'down'; ?>"
+                   href="?column=t.Status&order=<?php echo ($orderDirect == 'DESC' && $orderColumn == 't.Status') ? 'ASC' : 'DESC'; ?>"
                    role="button">Status</a>
             </div>
         </div>

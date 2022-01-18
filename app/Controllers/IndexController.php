@@ -9,16 +9,16 @@ class IndexController
 {
 
     private array $columnSort = [
-        'User.Name',
-        'User.Email',
-        'Task.Status'
+        'u.Name',
+        'u.Email',
+        't.Status'
     ];
 
     public function index($page = 1)
     {
         $taskManager = new TaskManager();
         $orderDirect = 'ASC';
-        $orderColumn = 'User.Name';
+        $orderColumn = 'u.Name';
 
         if (isset($_GET['column']) && in_array($_GET['column'], $this->columnSort)) {
         $orderColumn = $_GET['column'];

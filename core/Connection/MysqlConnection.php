@@ -8,6 +8,7 @@ use PDOEXCEPTION;
 class MysqlConnection extends Connection
 {
     private PDO $pdo;
+    private $sth;
 
     public function __construct()
     {
@@ -19,6 +20,7 @@ class MysqlConnection extends Connection
             echo "Failed To Connect. Error " . $err->getMessage();
         }
     }
+
     public function pdo(): PDO
     {
         return $this->pdo;

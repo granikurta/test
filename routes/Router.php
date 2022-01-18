@@ -23,6 +23,7 @@ class Router
             $paramKey[] = $key;
         }
         $uri = explode("/", $route);
+        $requestUrl = preg_replace("/\?.*/", '', $requestUrl);
 
         foreach ($uri as $index => $param) {
             if (preg_match("/{.*}/", $param)) {
@@ -34,6 +35,7 @@ class Router
             if (empty($requestUrl[$index])) {
                 return;
             }
+
             $params[$paramKey[$key]] = $requestUrl[$index];
 
             $requestUrl[$index] = "{.*}";
@@ -42,9 +44,10 @@ class Router
         $requestUrl = str_replace("/", '\\/', $requestUrl);
 
         if (preg_match("/$requestUrl/", $route)) {
+
             $includeFile = explode('@', $controller);
             $controllerNamespace = CONTROLLER_PATH_NAMESPACE . $includeFile[0];
-            call_user_func_array([new  $controllerNamespace, 'index'], []);
+            call_user_func_array([new  $controllerNamespace, $includeFile[1]], $params);
         }
     }
 }

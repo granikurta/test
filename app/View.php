@@ -4,12 +4,13 @@ namespace app;
 
 class View
 {
-    private $template;
+    private string $template;
 
-    private $params;
-    private $mainTemplate;
+    private array $params;
+    private bool $mainTemplate;
+    private string $mainTemplateFile = 'template';
 
-    public function __construct($template, $params = [], $mainTemplate = 'template')
+    public function __construct($template, $params = [], $mainTemplate = True)
     {
         $this->template = $template;
         $this->params = $params;
@@ -27,8 +28,11 @@ class View
     public function render()
     {
         $template = $this->renderTemplate();
-        $mainTemplate = $this->renderMainTemplate();
+        if ($this->mainTemplate) {
+            $mainTemplate = $this->renderMainTemplate();
+        }
         echo str_replace('{{content}}', $template, $mainTemplate);
+        exit;
     }
 
     private function renderTemplate()
@@ -42,7 +46,7 @@ class View
     private function renderMainTemplate()
     {
         ob_start();
-        include_once LAYOUT_PATH . $this->mainTemplate . '.php';
+        include_once LAYOUT_PATH . $this->mainTemplateFile . '.php';
         return ob_get_clean();
     }
 }
